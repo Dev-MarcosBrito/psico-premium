@@ -1,422 +1,547 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dra. Ana Silva | Psicologia Clínica & Psicanálise</title>
-    <meta name="description" content="Espaço de escuta qualificada e transformação emocional. Atendimento online e presencial em São Paulo.">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eliezer Jr. - Psicólogo Clinico</title>
+    <meta
+      name="description"
+      content="Espaço de escuta qualificada e transformação emocional com o Dr. Antônio Eliezer. Atendimento online e presencial."
+    />
+
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            moss: '#4A5D4F',     /* Verde Musgo Profundo (Autoridade) */
-                            sage: '#8FA396',     /* Verde Sálvia (Calma) */
-                            sand: '#F2EFEC',     /* Areia Quente (Fundo) */
-                            clay: '#C08B76',     /* Terracota Suave (Acentos) */
-                            stone: '#1C1917'     /* Texto Escuro */
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        serif: ['Cormorant Garamond', 'serif'],
-                    },
-                    backgroundImage: {
-                        'texture': "url('https://www.transparenttextures.com/patterns/clean-gray-paper.png')",
-                    },
-                    boxShadow: {
-                        'soft': '0 20px 40px -15px rgba(74, 93, 79, 0.1)',
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                moss: "#4A5D4F" /* Verde Musgo Profundo (Autoridade) */,
+                sage: "#8FA396" /* Verde Sálvia (Calma) */,
+                sand: "#F2EFEC" /* Areia Quente (Fundo) */,
+                clay: "#C08B76" /* Terracota Suave (Acentos) */,
+                stone: "#1C1917" /* Texto Escuro */,
+              },
+            },
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              serif: ["Cormorant Garamond", "serif"],
+            },
+            backgroundImage: {
+              texture:
+                "url('https://www.transparenttextures.com/patterns/clean-gray-paper.png')",
+            },
+            boxShadow: {
+              soft: "0 20px 40px -15px rgba(74, 93, 79, 0.1)",
+            },
+          },
+        },
+      };
     </script>
 
     <style>
-        body {
-            background-color: #F2EFEC;
-            color: #1C1917;
-        }
+      body {
+        background-color: #f2efec;
+        color: #1c1917;
+      }
 
-        /* Utilitários de Vidro */
-        .glass {
-            background: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-        }
+      .glass {
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
 
-        .glass-dark {
-            background: rgba(74, 93, 79, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+      .glass-dark {
+        background: rgba(74, 93, 79, 0.9);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
 
-        /* Detalhes finos */
-        .text-stroke-title {
-            -webkit-text-stroke: 1px rgba(0,0,0,0.1);
-            color: transparent;
+      @keyframes float {
+        0% {
+          transform: translateY(0px) translateX(-50%);
         }
-        
-        /* Smooth Scroll behavior adjustment */
-        html {
-            scroll-behavior: smooth;
+        50% {
+          transform: translateY(-20px) translateX(-50%);
         }
+        100% {
+          transform: translateY(0px) translateX(-50%);
+        }
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
     </style>
-</head>
-<body class="antialiased selection:bg-brand-clay selection:text-white overflow-x-hidden">
+  </head>
+  <body
+    class="antialiased selection:bg-brand-clay selection:text-white overflow-x-hidden"
+  >
+    <div
+      class="fixed inset-0 bg-texture opacity-40 pointer-events-none z-0"
+    ></div>
 
-    <div class="fixed inset-0 bg-texture opacity-40 pointer-events-none z-0"></div>
+    <!-- Navegação -->
+    <nav
+      class="fixed w-full z-50 transition-all duration-500 top-0"
+      id="navbar"
+    >
+      <div class="glass border-b border-brand-moss/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="flex justify-between h-20 items-center">
+            <a href="#" class="group">
+              <span
+                class="font-serif text-3xl font-medium tracking-tight text-brand-moss"
+                >Eliezer Jr.</span
+              >
+              <span
+                class="block text-[0.65rem] uppercase tracking-[0.25em] text-brand-moss/60 group-hover:text-brand-clay transition-colors"
+                >Psicólogo Clinico</span
+              >
+            </a>
 
-    <nav class="fixed w-full z-50 transition-all duration-500 top-0" id="navbar">
-        <div class="glass border-b border-brand-moss/5">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="flex justify-between h-20 items-center">
-                    <a href="#" class="group">
-                        <span class="font-serif text-3xl font-medium tracking-tight text-brand-moss">Dra. Ana<span class="text-brand-clay italic">Silva</span></span>
-                        <span class="block text-[0.65rem] uppercase tracking-[0.25em] text-brand-moss/60 group-hover:text-brand-clay transition-colors">Psicologia Clínica</span>
-                    </a>
-                    
-                    <div class="hidden md:flex items-center gap-8">
-                        <a href="#sobre" class="text-sm font-medium text-brand-stone/70 hover:text-brand-moss uppercase tracking-widest transition-colors">Sobre</a>
-                        <a href="#abordagem" class="text-sm font-medium text-brand-stone/70 hover:text-brand-moss uppercase tracking-widest transition-colors">Abordagem</a>
-                        <a href="#especialidades" class="text-sm font-medium text-brand-stone/70 hover:text-brand-moss uppercase tracking-widest transition-colors">Áreas</a>
-                        <a href="#contato" class="px-6 py-2.5 bg-brand-moss text-white rounded-sm hover:bg-brand-clay transition-all duration-300 text-xs font-bold uppercase tracking-widest shadow-soft">
-                            Agendar Sessão
-                        </a>
-                    </div>
-
-                    <button id="mobile-menu-btn" class="md:hidden text-brand-moss p-2">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
+            <div class="hidden md:flex items-center gap-8">
+              <a
+                href="#sobre"
+                class="text-sm font-medium text-brand-stone/70 hover:text-brand-moss uppercase tracking-widest transition-colors"
+                >Sobre</a
+              >
+              <a
+                href="#abordagem"
+                class="text-sm font-medium text-brand-stone/70 hover:text-brand-moss uppercase tracking-widest transition-colors"
+                >Abordagem</a
+              >
+              <a
+                href="#especialidades"
+                class="text-sm font-medium text-brand-stone/70 hover:text-brand-moss uppercase tracking-widest transition-colors"
+                >Áreas</a
+              >
+              <a
+                href="#contato"
+                class="px-6 py-2.5 bg-brand-moss text-white rounded-sm hover:bg-brand-clay transition-all duration-300 text-xs font-bold uppercase tracking-widest shadow-soft"
+              >
+                Agendar Sessão
+              </a>
             </div>
-        </div>
 
-        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-[#F2EFEC] border-b border-brand-moss/10 shadow-xl">
-            <div class="px-6 py-8 flex flex-col gap-6 text-center">
-                <a href="#sobre" class="font-serif text-2xl text-brand-moss">Sobre</a>
-                <a href="#abordagem" class="font-serif text-2xl text-brand-moss">Abordagem</a>
-                <a href="#especialidades" class="font-serif text-2xl text-brand-moss">Áreas</a>
-                <a href="#contato" class="text-brand-clay font-bold uppercase tracking-widest text-sm">Agendar Agora</a>
-            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-brand-moss p-2">
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
         </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden absolute w-full bg-[#F2EFEC] border-b border-brand-moss/10 shadow-xl"
+      >
+        <div class="px-6 py-8 flex flex-col gap-6 text-center">
+          <a href="#sobre" class="font-serif text-2xl text-brand-moss">Sobre</a>
+          <a href="#abordagem" class="font-serif text-2xl text-brand-moss"
+            >Abordagem</a
+          >
+          <a href="#especialidades" class="font-serif text-2xl text-brand-moss"
+            >Áreas</a
+          >
+          <a
+            href="#contato"
+            class="text-brand-clay font-bold uppercase tracking-widest text-sm"
+            >Agendar Agora</a
+          >
+        </div>
+      </div>
     </nav>
 
-    <section class="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1590283084323-0df0b2c999ec?q=80&w=1920&auto=format&fit=crop" 
-                 alt="Ambiente Terapêutico Clean" 
-                 class="w-full h-full object-cover opacity-80">
-            <div class="absolute inset-0 bg-gradient-to-r from-[#F2EFEC]/90 via-[#F2EFEC]/50 to-transparent"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#F2EFEC] via-transparent to-transparent"></div>
+    <!-- Hero Section -->
+    <section
+      class="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0">
+        <!-- Imagem de fundo: Consultório sofisticado/masculino -->
+        <img
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1920&auto=format&fit=crop"
+          alt="Ambiente Terapêutico Dr. Antônio Eliezer"
+          class="w-full h-full object-cover opacity-80"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-[#F2EFEC]/90 via-[#F2EFEC]/50 to-transparent"
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-[#F2EFEC] via-transparent to-transparent"
+        ></div>
+      </div>
+
+      <div
+        class="relative z-10 container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center mt-20"
+      >
+        <div class="max-w-xl" data-aos="fade-up" data-aos-duration="1000">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="h-[1px] w-12 bg-brand-clay"></span>
+            <span
+              class="text-brand-clay font-bold tracking-[0.2em] text-xs uppercase"
+              >Atendimento Online</span
+            >
+          </div>
+
+          <h1
+            class="font-serif text-5xl md:text-7xl text-brand-moss leading-[1.1] mb-8 font-light"
+          >
+            Reencontre o <br />
+            <span class="italic font-medium">equilíbrio</span> da sua <br />
+            própria história.
+          </h1>
+
+          <p
+            class="text-lg text-brand-stone/70 leading-relaxed mb-10 font-light"
+          >
+            Um espaço seguro para você elaborar suas questões, ressignificar
+            traumas e construir uma vida com mais sentido e autonomia emocional
+            sob a orientação do Eliezer Jr.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-5">
+            <a
+              href="#contato"
+              class="group bg-brand-moss text-white px-8 py-4 rounded-sm flex items-center justify-center gap-3 hover:bg-brand-stone transition-all duration-300 shadow-soft"
+            >
+              <span class="text-xs font-bold uppercase tracking-widest"
+                >Agendar Consulta</span
+              >
+              <i
+                class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+            <a
+              href="#sobre"
+              class="group px-8 py-4 border border-brand-moss/30 text-brand-moss hover:bg-brand-moss hover:text-white transition-all duration-300 rounded-sm flex items-center justify-center gap-3"
+            >
+              <i class="far fa-user text-lg"></i>
+              <span class="text-xs font-bold uppercase tracking-widest"
+                >Conheça o Eliezer Jr.</span
+              >
+            </a>
+          </div>
         </div>
 
-        <div class="relative z-10 container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center mt-20">
-            <div class="max-w-xl" data-aos="fade-up" data-aos-duration="1000">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="h-[1px] w-12 bg-brand-clay"></span>
-                    <span class="text-brand-clay font-bold tracking-[0.2em] text-xs uppercase">Atendimento Online & Presencial</span>
-                </div>
-
-                <h1 class="font-serif text-5xl md:text-7xl text-brand-moss leading-[1.1] mb-8 font-light">
-                    Reencontre o <br>
-                    <span class="italic font-medium">equilíbrio</span> da sua <br>
-                    própria história.
-                </h1>
-                
-                <p class="text-lg text-brand-stone/70 leading-relaxed mb-10 font-light">
-                    Um espaço seguro e livre de julgamentos para você elaborar suas questões, resignificar traumas e construir uma vida com mais sentido e leveza.
-                </p>
-
-                <div class="flex flex-col sm:flex-row gap-5">
-                    <a href="#contato" class="group bg-brand-moss text-white px-8 py-4 rounded-sm flex items-center justify-center gap-3 hover:bg-brand-stone transition-all duration-300 shadow-soft">
-                        <span class="text-xs font-bold uppercase tracking-widest">Agendar Consulta</span>
-                        <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                    <a href="#sobre" class="group px-8 py-4 border border-brand-moss/30 text-brand-moss hover:bg-brand-moss hover:text-white transition-all duration-300 rounded-sm flex items-center justify-center gap-3">
-                        <i class="far fa-play-circle text-lg"></i>
-                        <span class="text-xs font-bold uppercase tracking-widest">Conheça a Dra. Ana</span>
-                    </a>
-                </div>
+        <div class="hidden md:block relative h-full">
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 glass p-6 rounded-t-full rounded-b-full shadow-soft animate-float"
+          >
+            <div
+              class="w-12 h-12 bg-brand-sage/20 rounded-full flex items-center justify-center text-brand-moss mx-auto mb-3"
+            >
+              <i class="fas fa-feather-alt"></i>
             </div>
-            
-            <div class="hidden md:block relative h-full">
-                <div class="absolute top-1/2 right-10 -translate-y-1/2 glass p-6 rounded-t-full rounded-b-full shadow-soft animate-[float_6s_ease-in-out_infinite]" style="animation-delay: 1s;">
-                    <div class="w-12 h-12 bg-brand-sage/20 rounded-full flex items-center justify-center text-brand-moss mx-auto mb-3">
-                        <i class="fas fa-feather-alt"></i>
-                    </div>
-                    <p class="text-center font-serif text-brand-moss italic text-lg">"A cura pela fala"</p>
-                </div>
-            </div>
+            <p
+              class="text-center font-serif text-brand-moss italic text-lg px-4 whitespace-nowrap"
+            >
+              "A cura pela palavra"
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
+    <!-- Sobre Section -->
     <section id="sobre" class="py-24 relative overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row gap-16 items-center">
-                <div class="w-full md:w-1/2 relative" data-aos="fade-right">
-                    <div class="aspect-[3/4] rounded-t-[10rem] rounded-b-lg overflow-hidden relative shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000">
-                        <div class="absolute bottom-0 left-0 bg-brand-sand/90 backdrop-blur p-6 w-full border-t border-brand-moss/10">
-                            <p class="font-serif text-2xl text-brand-moss italic">15+ Anos de Clínica</p>
-                        </div>
-                    </div>
-                    <div class="absolute -z-10 top-10 -left-10 w-full h-full border border-brand-clay/30 rounded-t-[10rem] rounded-b-lg"></div>
-                </div>
-
-                <div class="w-full md:w-1/2" data-aos="fade-left">
-                    <span class="text-brand-clay font-bold tracking-widest uppercase text-xs mb-4 block">Sobre a Profissional</span>
-                    <h2 class="font-serif text-4xl md:text-5xl text-brand-moss mb-8 leading-tight">
-                        Escuta ativa aliada à <br> <span class="italic text-brand-sage">técnica científica.</span>
-                    </h2>
-                    
-                    <div class="space-y-6 text-brand-stone/80 font-light text-lg leading-relaxed">
-                        <p>
-                            Olá, sou a Dra. Ana Silva. Acredito que a terapia é um ato de coragem. Meu trabalho é oferecer as ferramentas necessárias para que você navegue por suas emoções com mais clareza.
-                        </p>
-                        <p>
-                            Com especialização em Terapia Cognitivo-Comportamental (TCC) pela USP e Psicanálise, minha abordagem é integrativa: uno a profundidade da análise com estratégias práticas para o seu dia a dia.
-                        </p>
-                    </div>
-
-                    <div class="mt-10 grid grid-cols-2 gap-6">
-                        <div class="border-l-2 border-brand-clay pl-4">
-                            <h4 class="font-serif text-xl text-brand-moss">CRP 06/12345</h4>
-                            <p class="text-sm text-brand-stone/60">Registro Profissional Ativo</p>
-                        </div>
-                        <div class="border-l-2 border-brand-clay pl-4">
-                            <h4 class="font-serif text-xl text-brand-moss">Sigilo Absoluto</h4>
-                            <p class="text-sm text-brand-stone/60">Ética e Segurança</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="flex flex-col md:flex-row gap-16 items-center">
+          <div class="w-full md:w-1/2 relative" data-aos="fade-right">
+            <div
+              class="aspect-[3/4] rounded-t-[10rem] rounded-b-lg overflow-hidden relative shadow-2xl"
+            >
+              <!-- Imagem: Homem profissional em ambiente de consultório -->
+              <img
+                src="/eliezerjr.jpeg"
+                alt="Eliezer Jr."
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
+              />
+              <div
+                class="absolute bottom-0 left-0 bg-brand-sand/90 backdrop-blur p-6 w-full border-t border-brand-moss/10"
+              >
+                <p class="font-serif text-2xl text-brand-moss italic">
+                  Psicólogo Clinico
+                </p>
+              </div>
             </div>
+            <div
+              class="absolute -z-10 top-10 -left-10 w-full h-full border border-brand-clay/30 rounded-t-[10rem] rounded-b-lg"
+            ></div>
+          </div>
+
+          <div class="w-full md:w-1/2" data-aos="fade-left">
+            <span
+              class="text-brand-clay font-bold tracking-widest uppercase text-xs mb-4 block"
+              >Sobre o Eliezer Jr.</span
+            >
+            <h2
+              class="font-serif text-4xl md:text-5xl text-brand-moss mb-8 leading-tight"
+            >
+              Escuta ativa aliada à <br />
+              <span class="italic text-brand-sage">técnica e acolhimento.</span>
+            </h2>
+
+            <div
+              class="space-y-6 text-brand-stone/80 font-light text-lg leading-relaxed"
+            >
+              <p>
+                Olá, sou o **Dr. Antônio Eliezer**. Acredito que o processo
+                terapêutico é uma jornada de descoberta e fortalecimento. Meu
+                papel é oferecer o suporte técnico e humano para que você possa
+                enfrentar seus desafios com clareza.
+              </p>
+              <p>
+                Com sólida formação em Psicologia Clínica e Psicanálise, minha
+                atuação é pautada na ética e na singularidade de cada paciente.
+                Busco integrar a profundidade da investigação psíquica com o
+                pragmatismo necessário para a mudança.
+              </p>
+            </div>
+
+            <div class="mt-10 grid grid-cols-2 gap-6">
+              <div class="border-l-2 border-brand-clay pl-4">
+                <h4 class="font-serif text-xl text-brand-moss">CRP 10/12457</h4>
+                <p class="text-sm text-brand-stone/60">Ética Profissional</p>
+              </div>
+              <div class="border-l-2 border-brand-clay pl-4">
+                <h4 class="font-serif text-xl text-brand-moss">
+                  Sigilo Absoluto
+                </h4>
+                <p class="text-sm text-brand-stone/60">Segurança do Paciente</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
+    <!-- Especialidades -->
     <section id="especialidades" class="py-24 bg-white relative">
-        <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-sand/50 -z-0"></div>
-        
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="mb-16 md:flex justify-between items-end">
-                <div class="max-w-2xl">
-                    <span class="text-brand-clay font-bold tracking-widest uppercase text-xs mb-2 block">Áreas de Atuação</span>
-                    <h2 class="font-serif text-4xl md:text-5xl text-brand-moss leading-tight">Como posso te ajudar?</h2>
-                </div>
-                <div class="hidden md:block">
-                    <a href="#contato" class="text-brand-moss border-b border-brand-moss pb-1 hover:text-brand-clay hover:border-brand-clay transition-all text-sm font-bold uppercase tracking-widest">Ver todas as áreas</a>
-                </div>
-            </div>
+      <div
+        class="absolute top-0 right-0 w-1/3 h-full bg-brand-sand/50 -z-0"
+      ></div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="group bg-[#F9F8F6] p-10 hover:bg-brand-moss transition-all duration-500 cursor-pointer" data-aos="fade-up" data-aos-delay="0">
-                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-moss mb-8 shadow-sm group-hover:bg-brand-clay group-hover:text-white transition-colors">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl text-brand-moss mb-4 group-hover:text-white transition-colors">Ansiedade & Burnout</h3>
-                    <p class="text-brand-stone/70 font-light leading-relaxed group-hover:text-white/80 transition-colors">
-                        Para quem sente que a mente não para. Aprenda técnicas para gerenciar crises, excesso de futuro e exaustão profissional.
-                    </p>
-                </div>
-
-                <div class="group bg-[#F9F8F6] p-10 hover:bg-brand-moss transition-all duration-500 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-moss mb-8 shadow-sm group-hover:bg-brand-clay group-hover:text-white transition-colors">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl text-brand-moss mb-4 group-hover:text-white transition-colors">Relacionamentos</h3>
-                    <p class="text-brand-stone/70 font-light leading-relaxed group-hover:text-white/80 transition-colors">
-                        Dificuldades conjugais, dependência emocional ou conflitos familiares. Fortaleça sua autonomia e comunicação.
-                    </p>
-                </div>
-
-                <div class="group bg-[#F9F8F6] p-10 hover:bg-brand-moss transition-all duration-500 cursor-pointer" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-moss mb-8 shadow-sm group-hover:bg-brand-clay group-hover:text-white transition-colors">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl text-brand-moss mb-4 group-hover:text-white transition-colors">Autoconhecimento</h3>
-                    <p class="text-brand-stone/70 font-light leading-relaxed group-hover:text-white/80 transition-colors">
-                        Para quem não tem um "diagnóstico", mas sente que precisa se entender melhor, destravar potenciais e viver com propósito.
-                    </p>
-                </div>
-            </div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="mb-16 md:flex justify-between items-end">
+          <div class="max-w-2xl">
+            <span
+              class="text-brand-clay font-bold tracking-widest uppercase text-xs mb-2 block"
+              >Áreas de Atuação</span
+            >
+            <h2
+              class="font-serif text-4xl md:text-5xl text-brand-moss leading-tight"
+            >
+              Como posso ajudar?
+            </h2>
+          </div>
         </div>
-    </section>
 
-    <section class="py-24 bg-brand-sand/30 border-y border-brand-moss/5">
-        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16">
-            
-            <div>
-                <span class="text-brand-clay font-bold tracking-widest uppercase text-xs mb-2 block">O Processo</span>
-                <h2 class="font-serif text-4xl text-brand-moss mb-8">Como funciona a terapia?</h2>
-                
-                <div class="space-y-8">
-                    <div class="flex gap-6">
-                        <div class="font-serif text-4xl text-brand-moss/20 font-bold">01</div>
-                        <div>
-                            <h4 class="font-serif text-xl text-brand-moss mb-2">Sessão Inicial</h4>
-                            <p class="text-brand-stone/70 text-sm leading-relaxed">Um encontro para nos conhecermos, entendermos suas demandas e avaliarmos se minha abordagem faz sentido para você.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-6">
-                        <div class="font-serif text-4xl text-brand-moss/20 font-bold">02</div>
-                        <div>
-                            <h4 class="font-serif text-xl text-brand-moss mb-2">Frequência Semanal</h4>
-                            <p class="text-brand-stone/70 text-sm leading-relaxed">Encontros de 50 minutos (online ou presencial). A regularidade é fundamental para criar o vínculo terapêutico e gerar progresso.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-6">
-                        <div class="font-serif text-4xl text-brand-moss/20 font-bold">03</div>
-                        <div>
-                            <h4 class="font-serif text-xl text-brand-moss mb-2">Autonomia</h4>
-                            <p class="text-brand-stone/70 text-sm leading-relaxed">O objetivo final da terapia é que você não precise mais dela. Trabalhamos para que você desenvolva suas próprias ferramentas.</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="group bg-[#F9F8F6] p-10 hover:bg-brand-moss transition-all duration-500 cursor-pointer"
+            data-aos="fade-up"
+          >
+            <div
+              class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-moss mb-8 shadow-sm group-hover:bg-brand-clay group-hover:text-white transition-colors"
+            >
+              <i class="fas fa-brain"></i>
             </div>
-
-            <div class="bg-white p-8 md:p-10 shadow-soft">
-                <h3 class="font-serif text-2xl text-brand-moss mb-6">Dúvidas Frequentes</h3>
-                
-                <div class="space-y-4">
-                    <details class="group border-b border-brand-sand pb-4 cursor-pointer">
-                        <summary class="flex justify-between items-center font-medium text-brand-moss list-none">
-                            Aceita convênio médico?
-                            <span class="transition group-open:rotate-180 text-brand-clay"><i class="fas fa-chevron-down"></i></span>
-                        </summary>
-                        <div class="text-brand-stone/70 mt-4 text-sm leading-relaxed font-light">
-                            O atendimento é particular, o que garante maior sigilo e liberdade no tratamento. Porém, emito recibo para que você solicite o reembolso integral ou parcial junto ao seu plano de saúde.
-                        </div>
-                    </details>
-
-                    <details class="group border-b border-brand-sand pb-4 cursor-pointer">
-                        <summary class="flex justify-between items-center font-medium text-brand-moss list-none">
-                            A terapia online funciona mesmo?
-                            <span class="transition group-open:rotate-180 text-brand-clay"><i class="fas fa-chevron-down"></i></span>
-                        </summary>
-                        <div class="text-brand-stone/70 mt-4 text-sm leading-relaxed font-light">
-                            Sim. Estudos comprovam que a eficácia é a mesma do presencial. A plataforma utilizada é segura, criptografada e você ganha a comodidade de fazer de onde estiver.
-                        </div>
-                    </details>
-
-                    <details class="group border-b border-brand-sand pb-4 cursor-pointer">
-                        <summary class="flex justify-between items-center font-medium text-brand-moss list-none">
-                            Qual o valor da sessão?
-                            <span class="transition group-open:rotate-180 text-brand-clay"><i class="fas fa-chevron-down"></i></span>
-                        </summary>
-                        <div class="text-brand-stone/70 mt-4 text-sm leading-relaxed font-light">
-                            Os valores são condizentes com a tabela do CRP e a formação especializada. Entre em contato pelo WhatsApp para receber as informações detalhadas sobre investimento e formas de pagamento.
-                        </div>
-                    </details>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-brand-moss text-white text-center">
-        <div class="container mx-auto px-6 max-w-4xl" data-aos="zoom-in">
-            <i class="fas fa-quote-left text-4xl text-brand-clay mb-6 opacity-50"></i>
-            <p class="font-serif text-2xl md:text-4xl italic leading-relaxed mb-8 opacity-90">
-                "Cheguei ao consultório perdida e ansiosa. O processo com a Dra. Ana foi um divisor de águas. Hoje consigo respirar e tomar decisões que respeitam quem eu sou."
+            <h3
+              class="font-serif text-2xl text-brand-moss mb-4 group-hover:text-white transition-colors"
+            >
+              Ansiedade & Estresse
+            </h3>
+            <p
+              class="text-brand-stone/70 font-light leading-relaxed group-hover:text-white/80 transition-colors"
+            >
+              Auxílio no gerenciamento de crises e na redução da carga emocional
+              causada pelo cotidiano acelerado.
             </p>
-            <div class="flex items-center justify-center gap-3">
-                <div class="h-[1px] w-10 bg-brand-clay"></div>
-                <span class="text-xs font-bold uppercase tracking-widest">Paciente Anônima, 32 anos</span>
-                <div class="h-[1px] w-10 bg-brand-clay"></div>
+          </div>
+
+          <div
+            class="group bg-[#F9F8F6] p-10 hover:bg-brand-moss transition-all duration-500 cursor-pointer"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-moss mb-8 shadow-sm group-hover:bg-brand-clay group-hover:text-white transition-colors"
+            >
+              <i class="fas fa-users"></i>
             </div>
+            <h3
+              class="font-serif text-2xl text-brand-moss mb-4 group-hover:text-white transition-colors"
+            >
+              Relacionamentos
+            </h3>
+            <p
+              class="text-brand-stone/70 font-light leading-relaxed group-hover:text-white/80 transition-colors"
+            >
+              Trabalho voltado para a comunicação, limites e saúde nos vínculos
+              afetivos e familiares.
+            </p>
+          </div>
+
+          <div
+            class="group bg-[#F9F8F6] p-10 hover:bg-brand-moss transition-all duration-500 cursor-pointer"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-moss mb-8 shadow-sm group-hover:bg-brand-clay group-hover:text-white transition-colors"
+            >
+              <i class="fas fa-compass"></i>
+            </div>
+            <h3
+              class="font-serif text-2xl text-brand-moss mb-4 group-hover:text-white transition-colors"
+            >
+              Autoconhecimento
+            </h3>
+            <p
+              class="text-brand-stone/70 font-light leading-relaxed group-hover:text-white/80 transition-colors"
+            >
+              Exploração dos desejos e medos para uma vida com maior
+              autenticidade e propósito.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
+    <!-- Contato Section -->
     <section id="contato" class="py-24 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/clean-gray-paper.png')] opacity-30"></div>
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <h2 class="font-serif text-4xl md:text-6xl text-brand-moss mb-6">Comece sua jornada hoje.</h2>
-            <p class="text-brand-stone/70 text-lg mb-10 max-w-2xl mx-auto font-light">
-                Agende um horário e dê o primeiro passo em direção ao seu bem-estar emocional. Você não precisa passar por isso sozinho(a).
-            </p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://wa.me/" class="bg-[#25D366] hover:bg-[#20bd5a] text-white px-10 py-5 rounded-sm font-bold uppercase tracking-widest shadow-xl flex items-center justify-center gap-3 transition-all hover:-translate-y-1">
-                    <i class="fab fa-whatsapp text-xl"></i> Agendar pelo WhatsApp
-                </a>
-                <a href="mailto:contato@draana.com" class="border border-brand-moss text-brand-moss hover:bg-brand-moss hover:text-white px-10 py-5 rounded-sm font-bold uppercase tracking-widest transition-all flex items-center justify-center gap-3">
-                    <i class="far fa-envelope text-xl"></i> Enviar E-mail
-                </a>
-            </div>
+      <div class="container mx-auto px-6 text-center relative z-10">
+        <h2 class="font-serif text-4xl md:text-6xl text-brand-moss mb-6">
+          Inicie sua jornada hoje.
+        </h2>
+        <p
+          class="text-brand-stone/70 text-lg mb-10 max-w-2xl mx-auto font-light"
+        >
+          Agende um horário com o Eliezer Jr. e dê o primeiro passo para
+          o seu bem-estar emocional.
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="https://wa.me/5593991744437"
+            class="bg-[#25D366] hover:bg-[#20bd5a] text-white px-10 py-5 rounded-sm font-bold uppercase tracking-widest shadow-xl flex items-center justify-center gap-3 transition-all hover:-translate-y-1"
+          >
+            <i class="fab fa-whatsapp text-xl"></i> Agendar pelo WhatsApp
+          </a>
+          <a
+            href="mailto:psicologoeliezerjr@gmail.com"
+            class="border border-brand-moss text-brand-moss hover:bg-brand-moss hover:text-white px-10 py-5 rounded-sm font-bold uppercase tracking-widest transition-all flex items-center justify-center gap-3"
+          >
+            <i class="far fa-envelope text-xl"></i> Enviar E-mail
+          </a>
         </div>
+      </div>
     </section>
 
-    <footer class="bg-brand-stone text-brand-sand py-16 border-t border-white/5 text-sm font-light">
-        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12">
-            <div>
-                <span class="font-serif text-2xl font-medium tracking-tight text-white block mb-4">Dra. Ana Silva</span>
-                <p class="opacity-60 leading-relaxed max-w-xs">Psicologia Clínica focada em desenvolvimento humano e saúde mental baseada em evidências.</p>
-            </div>
-            <div>
-                <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Contato</h4>
-                <ul class="space-y-3 opacity-60">
-                    <li><i class="fab fa-whatsapp w-6"></i> (11) 99999-9999</li>
-                    <li><i class="far fa-envelope w-6"></i> contato@draana.com</li>
-                    <li><i class="fas fa-map-marker-alt w-6"></i> Av. Paulista, 1000 - SP</li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-6">Social</h4>
-                <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center hover:bg-brand-clay hover:border-brand-clay transition-all"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center hover:bg-brand-clay hover:border-brand-clay transition-all"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
+    <!-- Rodapé -->
+    <footer
+      class="bg-brand-stone text-brand-sand py-16 border-t border-white/5 text-sm font-light"
+    >
+      <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12">
+        <div>
+          <span
+            class="font-serif text-2xl font-medium tracking-tight text-white block mb-4"
+            >Eliezer Jr.</span
+          >
+          <p class="opacity-60 leading-relaxed max-w-xs">
+            Psicologia Clínica.
+          </p>
         </div>
-        <div class="container mx-auto px-6 mt-16 pt-8 border-t border-white/10 text-center opacity-40 text-xs">
-            &copy; 2024 Rafael Monteiro Dev. Todos os direitos reservados.
+        <div>
+          <h4
+            class="text-white font-bold uppercase tracking-widest text-xs mb-6"
+          >
+            Contato
+          </h4>
+          <ul class="space-y-3 opacity-60">
+            <li><i class="fab fa-whatsapp w-6"></i> (93) 9 9174-4437</li>
+            <li>
+              <i class="far fa-envelope w-6"></i> psicologoeliezerjr@gmail.com
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt w-6"></i> Altamira-PA |
+              Atendimento Online
+            </li>
+          </ul>
         </div>
+        <div>
+          <h4
+            class="text-white font-bold uppercase tracking-widest text-xs mb-6"
+          >
+            Redes Sociais
+          </h4>
+          <div class="flex gap-4">
+            <a
+              href="#"
+              class="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center hover:bg-brand-clay hover:border-brand-clay transition-all"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="#"
+              class="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center hover:bg-brand-clay hover:border-brand-clay transition-all"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="container mx-auto px-6 mt-16 pt-8 border-t border-white/10 text-center opacity-40 text-xs"
+      >
+        &copy; 2024 Eliezer Jr. Desenvolvido com foco na ética e
+        acolhimento.
+      </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 50
-        });
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 50,
+      });
 
-        // Mobile Menu Toggle
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
+      const btn = document.getElementById("mobile-menu-btn");
+      const menu = document.getElementById("mobile-menu");
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
 
-        // Close Mobile Menu on Click
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menu.classList.add("hidden");
         });
+      });
 
-        // Navbar Scroll Effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if(window.scrollY > 50) {
-                navbar.classList.add('py-0');
-            } else {
-                navbar.classList.remove('py-0');
-            }
-        });
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("py-0");
+        } else {
+          navbar.classList.remove("py-0");
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
